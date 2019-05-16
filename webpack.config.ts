@@ -1,4 +1,3 @@
-const HtmlWebpackPlugin = require('html-webpack-plugin')
 import webpack from 'webpack';
 
 interface Env {
@@ -7,6 +6,10 @@ interface Env {
 }
 
 const config: (env: Env) => webpack.Configuration = env => {
+
+  //////////////////////
+  // Loaders
+  //////////////////////
 
   const babelLoader = () => ({
     loader: 'babel-loader',
@@ -33,9 +36,15 @@ const config: (env: Env) => webpack.Configuration = env => {
       }
     }
   }
+
+
+
+  //////////////////////
+  // Rules
+  //////////////////////
   
   const babelRule = () => ({
-    test: /\.m?(j|t)sx?$/,
+    test: /\.(js|ts|jsx|tsx)$/,
     exclude: /node_modules/,
     use: babelLoader(),
   })
@@ -49,6 +58,25 @@ const config: (env: Env) => webpack.Configuration = env => {
     ]
   })
 
+
+
+  //////////////////////
+  // Plugins
+  //////////////////////
+
+  const htmlWebpackPlugin = () => {
+    const HtmlWebpackPlugin = require('html-webpack-plugin');
+    return new HtmlWebpackPlugin({
+      template: 'src/index.html',
+    })
+  }
+
+
+  
+  //////////////////////
+  // Config
+  //////////////////////
+
   return {
     mode: env.production ? 'production' : 'development',
     module: {
@@ -61,9 +89,7 @@ const config: (env: Env) => webpack.Configuration = env => {
       extensions: [".js", ".ts", ".jsx", ".tsx", "*"]
     },
     plugins: [
-      new HtmlWebpackPlugin({
-        template: 'src/index.html',
-      }),
+      htmlWebpackPlugin(),
     ]
   }
 }
