@@ -1,8 +1,8 @@
-import { ApolloClient } from 'apollo-client';
-import { InMemoryCache } from 'apollo-cache-inmemory';
-import { HttpLink } from 'apollo-link-http';
-import { onError } from 'apollo-link-error';
-import { ApolloLink } from 'apollo-link';
+import { ApolloClient } from 'apollo-client'
+import { InMemoryCache } from 'apollo-cache-inmemory'
+import { HttpLink } from 'apollo-link-http'
+import { onError } from 'apollo-link-error'
+import { ApolloLink } from 'apollo-link'
 
 // https://www.apollographql.com/docs/react/advanced/boost-migration
 export const client = new ApolloClient({
@@ -13,8 +13,8 @@ export const client = new ApolloClient({
           console.log(
             `[GraphQL error]: Message: ${message}, Location: ${locations}, Path: ${path}`,
           ),
-        );
-      if (networkError) console.log(`[Network error]: ${networkError}`);
+        )
+      if (networkError) console.log(`[Network error]: ${networkError}`)
     }),
     new HttpLink({
       uri: 'https://w5xlvm3vzz.lp.gql.zone/graphql',
@@ -22,4 +22,4 @@ export const client = new ApolloClient({
     })
   ]),
   cache: new InMemoryCache()
-});
+})

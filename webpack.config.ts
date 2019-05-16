@@ -70,7 +70,7 @@ const configureWebpack = (env: Env) => {
   //////////////////////
 
   const htmlWebpackPlugin = () => {
-    const HtmlWebpackPlugin = require('html-webpack-plugin');
+    const HtmlWebpackPlugin = require('html-webpack-plugin')
     return new HtmlWebpackPlugin({
       template: 'src/index.html',
     })
@@ -103,4 +103,4 @@ const configureWebpack = (env: Env) => {
   return configuration
 }
 
-export default configureWebpack;
+export default configureWebpack

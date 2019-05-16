@@ -1,7 +1,7 @@
 import React from 'react'
 
 import styles from './ProductCardList.scss'
-import { ProductCard } from './ProductCard';
+import { ProductCard } from './ProductCard'
 
 export const ProductCardList = ({ products }) => (
   <div className={styles.list}>

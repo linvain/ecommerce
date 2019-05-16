@@ -1,10 +1,10 @@
 import ReactDOM from 'react-dom'
 import React from 'react'
-import { ApolloProvider } from 'react-apollo-hooks';
+import { ApolloProvider } from 'react-apollo-hooks'
 
-import { client } from './client';
-import { ProductCardList } from './components/ProductCardList';
-import { Header } from './components/Header';
+import { client } from './client'
+import { ProductCardList } from './components/ProductCardList'
+import { Header } from './components/Header'
 
 const fakeProducts = [...Array(20).keys()].map((n) => {
   const m = n + 1
