@@ -82,8 +82,8 @@ const configureWebpack = (env: Env) => {
   // Configuration
   //////////////////////
 
-  // Without this variable Typescript would not
-  // type check extra properties
+  // Without this variable Typescript would
+  // fail to type check extra properties
   const configuration: webpack.Configuration = {
     mode: env.production ? 'production' : 'development',
     resolve: {

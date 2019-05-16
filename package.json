@@ -6,7 +6,8 @@
   "private": true,
   "scripts": {
     "start": "webpack-dev-server --env.development",
-    "build": "webpack --env.production"
+    "build": "webpack --env.production",
+    "eslint": "eslint \"**/*.{js,ts,jsx,tsx}\" --ignore-path .gitignore --format codeframe"
   },
   "dependencies": {
     "@babel/core": "^7.4.4",
@@ -40,6 +41,7 @@
     "@types/react-dom": "^16.8.4",
     "@types/webpack": "^4.4.31",
     "@types/webpack-dev-server": "^3.1.5",
+    "@typescript-eslint/parser": "^1.9.0",
     "eslint": "^5.16.0",
     "ts-node": "^8.1.0",
     "typescript": "^3.4.5",
