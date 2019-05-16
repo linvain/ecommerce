@@ -5,7 +5,9 @@ interface Env {
   production?: boolean;
 }
 
-const config: (env: Env) => webpack.Configuration = env => {
+type FunctionalConfig = (env: Env) => webpack.Configuration
+
+const config: FunctionalConfig = env => {
 
   //////////////////////
   // Loaders
