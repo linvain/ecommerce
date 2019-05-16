@@ -1,13 +1,11 @@
-import webpack from 'webpack';
+import webpack from "webpack"
 
 interface Env {
   development?: boolean;
   production?: boolean;
 }
 
-type FunctionalConfig = (env: Env) => webpack.Configuration
-
-const config: FunctionalConfig = env => {
+const configureWebpack = (env: Env) => {
 
   //////////////////////
   // Loaders
@@ -19,6 +17,10 @@ const config: FunctionalConfig = env => {
   
   const styleLoader = () => ({
     loader: "style-loader"
+  })
+
+  const cssModulesTypescriptLoader = () => ({
+    loader: "css-modules-typescript-loader"
   })
   
   const cssLoader = () => ({
@@ -55,6 +57,7 @@ const config: FunctionalConfig = env => {
     test: /\.scss$/,
     use: [
       styleLoader(),
+      cssModulesTypescriptLoader(),
       cssLoader(),
       sassLoader(),
     ]
@@ -76,24 +79,28 @@ const config: FunctionalConfig = env => {
 
   
   //////////////////////
-  // Config
+  // Configuration
   //////////////////////
 
-  return {
+  // Without this variable Typescript would not
+  // type check extra properties
+  const configuration: webpack.Configuration = {
     mode: env.production ? 'production' : 'development',
+    resolve: {
+      extensions: [".js", ".ts", ".jsx", ".tsx", "*"],
+    },
     module: {
       rules: [
         babelRule(),
-        stylesRule()
+        stylesRule(),
       ]
-    },
-    resolve: {
-      extensions: [".js", ".ts", ".jsx", ".tsx", "*"]
     },
     plugins: [
       htmlWebpackPlugin(),
     ]
   }
+  
+  return configuration
 }
 
-export default config;
+export default configureWebpack;
