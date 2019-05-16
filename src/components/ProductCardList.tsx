@@ -3,7 +3,11 @@ import React from 'react'
 import styles from './ProductCardList.scss'
 import { ProductCard } from './ProductCard'
 
-export const ProductCardList = ({ products }) => (
+interface IProps {
+  products: Product[]
+}
+
+export const ProductCardList = ({ products }: IProps) => (
   <div className={styles.list}>
     {products.map(product => (
       <ProductCard
