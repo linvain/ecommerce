@@ -8,7 +8,7 @@ interface IProps {
 }
 
 export const ProductCard = ({ product }: IProps) => (
-  <Link className={styles.card}>
+  <Link className={styles.card} to={'/' + product.id}>
     <img className={styles.image} src={product.img}/>
     <div className={styles.name}>{product.name}</div>
   </Link>
