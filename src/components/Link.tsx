@@ -1,7 +1,4 @@
 import React from 'react'
-import { useMutation } from 'react-apollo-hooks';
-
-import { CHANGE_LOCATION } from '../queries/CHANGE_LOCATION';
 
 interface IProps {
   children: any
@@ -9,10 +6,10 @@ interface IProps {
 }
 
 export const Link = ({ children, className }: IProps) => {
-  const changeLocation = useMutation(CHANGE_LOCATION);
+  const changeLocation = (to: string) => {console.log(to)}
   return (
     <a
-      onClick={() => changeLocation({ variables: { to: '/' } })}
+      onClick={() => changeLocation('/')}
       className={className}>
       {children}
     </a>

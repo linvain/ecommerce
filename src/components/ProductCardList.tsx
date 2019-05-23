@@ -1,28 +1,28 @@
 import React from 'react'
-import { useQuery } from 'react-apollo-hooks';
 
 import styles from './ProductCardList.scss'
 import { ProductCard } from './ProductCard'
-import { GET_PRODUCTS } from '../queries/GET_PRODUCTS';
 
-interface IProps {
-  products: Product[]
-}
-
-const _ProductCardList = ({ products }: IProps) => (
-  <div className={styles.list}>
-    {products.map(product => (
-      <ProductCard
-        key={product.id}
-        product={product}
-      />
-    ))}
-  </div>
-)
+const fakeProducts = [...Array(40).keys()].map((n) => {
+  const m = n + 1
+  return {
+    id: m,
+    name: `Product ${m}`,
+    img: `https://dummyimage.com/150x150/fff/000&text=${m}`,
+    __typename: 'Product'
+  }
+})
 
 export const ProductCardList = () => {
-  console.log('kek')
-  const { data, error, loading } = useQuery(GET_PRODUCTS)
-  if (loading || error) return null
-  return <_ProductCardList products={data.products}/>
+  const products = fakeProducts
+  return (
+    <div className={styles.list}>
+      {products.map(product => (
+        <ProductCard
+          key={product.id}
+          product={product}
+        />
+      ))}
+    </div>
+  )
 }
