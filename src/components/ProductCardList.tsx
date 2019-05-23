@@ -1,13 +1,15 @@
 import React from 'react'
+import { useQuery } from 'react-apollo-hooks';
 
 import styles from './ProductCardList.scss'
 import { ProductCard } from './ProductCard'
+import { GET_PRODUCTS } from '../queries/GET_PRODUCTS';
 
 interface IProps {
   products: Product[]
 }
 
-export const ProductCardList = ({ products }: IProps) => (
+const _ProductCardList = ({ products }: IProps) => (
   <div className={styles.list}>
     {products.map(product => (
       <ProductCard
@@ -17,3 +19,10 @@ export const ProductCardList = ({ products }: IProps) => (
     ))}
   </div>
 )
+
+export const ProductCardList = () => {
+  console.log('kek')
+  const { data, error, loading } = useQuery(GET_PRODUCTS)
+  if (loading || error) return null
+  return <_ProductCardList products={data.products}/>
+}
