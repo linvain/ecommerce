@@ -97,7 +97,10 @@ const configureWebpack = (env: Env) => {
     },
     plugins: [
       htmlWebpackPlugin(),
-    ]
+    ],
+    devServer: {
+      historyApiFallback: true
+    }
   }
   
   return configuration

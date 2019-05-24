@@ -1,3 +1,5 @@
+import { history } from './history'
+
 const fakeProducts = [...Array(40).keys()].map((n) => {
   const m = n + 1
   return {
@@ -9,4 +11,5 @@ const fakeProducts = [...Array(40).keys()].map((n) => {
 
 export const preloadedState = {
   products: fakeProducts,
+  location: history.location.pathname,
 }

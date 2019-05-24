@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 
 import { ProductCardList } from './components/ProductCardList'
 import { Header } from './components/Header'
-import { store } from './ducks/store';
+import { store } from './ducks/configureStore'
 
 ReactDOM.render(
   <Provider store={store}>

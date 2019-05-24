@@ -1,5 +1,5 @@
 import React from 'react'
-import { useDispatch } from 'react-redux'
+import { history } from '../ducks/history'
 
 interface IProps {
   children: any
@@ -7,20 +7,12 @@ interface IProps {
   to: string
 }
 
-const useChangeLocation = (to: string) => {
-  const dispatch = useDispatch()
-  const changeLocation = () => dispatch({
-    type: 'CHANGE_LOCATION',
-    payload: to,
-  })
-  return changeLocation
-}
+const push = (to: string) => history.push(to)
 
 export const Link = ({ children, className, to }: IProps) => {
-  const changeLocation = useChangeLocation(to)
   return (
     <a
-      onClick={changeLocation}
+      onClick={() => push(to)}
       className={className}>
       {children}
     </a>
