@@ -1,9 +1,10 @@
 import React from 'react'
 
 import styles from './Header.scss'
+import { Link } from './Link'
 
 export const Header = () => (
-  <h1 className={styles.header}>
+  <Link className={styles.header} to={'/'}>
     Simple Store
-  </h1>
+  </Link>
 )

@@ -6,6 +6,8 @@ import { ProductCardList } from './components/ProductCardList'
 import { Header } from './components/Header'
 import { store } from './ducks/configureStore'
 
+import './index.scss'
+
 ReactDOM.render(
   <Provider store={store}>
     <Header/>

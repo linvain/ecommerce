@@ -1,4 +1,5 @@
 import webpack from "webpack"
+const path = require('path')
 
 interface Env {
   development?: boolean;
@@ -46,15 +47,26 @@ const configureWebpack = (env: Env) => {
   //////////////////////
   // Rules
   //////////////////////
-  
+
   const babelRule = () => ({
     test: /\.(js|ts|jsx|tsx)$/,
     exclude: /node_modules/,
     use: babelLoader(),
   })
   
-  const stylesRule = () => ({
+  const globalStylesRule = () => ({
     test: /\.scss$/,
+    include: [path.resolve(__dirname, "./src/index.scss")],
+    use: [
+      styleLoader(),
+      cssLoader(),
+      sassLoader(),
+    ]
+  })
+
+  const localStylesRule = () => ({
+    test: /\.scss$/,
+    exclude: [path.resolve(__dirname, "./src/index.scss")],
     use: [
       styleLoader(),
       cssModulesTypescriptLoader(),
@@ -92,7 +104,8 @@ const configureWebpack = (env: Env) => {
     module: {
       rules: [
         babelRule(),
-        stylesRule(),
+        globalStylesRule(),
+        localStylesRule(),
       ]
     },
     plugins: [
