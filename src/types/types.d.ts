@@ -11,3 +11,8 @@ interface FluxStandardAction {
   error?: boolean
   meta?: any
 }
+
+interface State {
+  location: string
+  products: Product[]
+}

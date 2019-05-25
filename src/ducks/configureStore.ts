@@ -3,7 +3,7 @@ import { createEpicMiddleware } from 'redux-observable'
 import { applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
 
-import { reducer } from './reducer'
+import { rootReducer } from './reducer'
 import { preloadedState } from './preloadedState'
 import { rootEpic } from './rootEpic'
 import { history } from './history'
@@ -17,7 +17,7 @@ const configureStore = () => {
   const enhancers = [middlewareEnhancer]
   const composedEnhancers = composeWithDevTools({})(...enhancers)
 
-  const store = createStore(reducer, preloadedState, composedEnhancers)
+  const store = createStore(rootReducer, preloadedState, composedEnhancers)
 
   epicMiddleware.run(rootEpic)
 
