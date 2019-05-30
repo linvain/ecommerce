@@ -1,5 +1,6 @@
 .card {
-  width: 150px;
+  width: 250px;
+  height: 300px;
   border: 1px solid black;
   border-radius: 15px;
   overflow: hidden;
@@ -7,10 +8,12 @@
 }
 
 .image {
-  width: 150px;
-  height: 150px;
+  width: 250px;
+  height: 250px;
 }
 
 .name {
-  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

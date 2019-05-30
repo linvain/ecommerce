@@ -1,9 +1,0 @@
-{
-  "compilerOptions": {
-    "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true,
-    "noImplicitAny": true,
-    "esModuleInterop": true,
-    "jsx": "react"
-  }
-}

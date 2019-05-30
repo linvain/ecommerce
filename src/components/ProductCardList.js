@@ -5,7 +5,7 @@ import styles from './ProductCardList.scss'
 import { ProductCard } from './ProductCard'
 
 export const ProductCardList = () => {
-  const products = useSelector(store => store.products)
+  const products = useSelector(store => store.products, undefined)
   return (
     <div className={styles.list}>
       {products.map(product => (

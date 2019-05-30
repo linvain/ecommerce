@@ -1,13 +1,9 @@
 import React from 'react'
 
 import styles from './ProductCard.scss'
-import { Link } from './Link';
+import { Link } from './Link'
 
-interface IProps {
-  product: Product
-}
-
-export const ProductCard = ({ product }: IProps) => (
+export const ProductCard = ({ product }) => (
   <Link className={styles.card} to={'/' + product.id}>
     <img className={styles.image} src={product.img}/>
     <div className={styles.name}>{product.name}</div>

@@ -1,18 +1,21 @@
 import {combineReducers} from 'redux'
 
-const locationReducer = (state: string = null, action: FluxStandardAction) => {
+const locationReducer = (state = null, action) => {
   switch (action.type) {
     case 'CHANGE_LOCATION':
-      const location: string = action.payload
-      return location
+      return action.payload
+    case 'KEK':
+      return state
     default:
       return state
   }
 }
 
-const productsReducer = (state: Product[] = [], action: FluxStandardAction) => {
+const productsReducer = (state = [], action) => {
   switch (action.type) {
-    case 'CHANGE_LOCATION':
+    case 'KEK':
+      return state
+    case 'LOL':
       return state
     default:
       return state

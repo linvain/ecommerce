@@ -1,12 +1,6 @@
-import webpack from "webpack"
 const path = require('path')
 
-interface Env {
-  development?: boolean;
-  production?: boolean;
-}
-
-const configureWebpack = (env: Env) => {
+module.exports = env => {
 
   //////////////////////
   // Loaders
@@ -18,10 +12,6 @@ const configureWebpack = (env: Env) => {
   
   const styleLoader = () => ({
     loader: "style-loader"
-  })
-
-  const cssModulesTypescriptLoader = () => ({
-    loader: "css-modules-typescript-loader"
   })
   
   const cssLoader = () => ({
@@ -49,7 +39,7 @@ const configureWebpack = (env: Env) => {
   //////////////////////
 
   const babelRule = () => ({
-    test: /\.(js|ts|jsx|tsx)$/,
+    test: /\.js$/,
     exclude: /node_modules/,
     use: babelLoader(),
   })
@@ -69,7 +59,6 @@ const configureWebpack = (env: Env) => {
     exclude: [path.resolve(__dirname, "./src/index.scss")],
     use: [
       styleLoader(),
-      cssModulesTypescriptLoader(),
       cssLoader(),
       sassLoader(),
     ]
@@ -94,12 +83,10 @@ const configureWebpack = (env: Env) => {
   // Configuration
   //////////////////////
 
-  // Without this variable Typescript would
-  // fail to type check extra properties
-  const configuration: webpack.Configuration = {
+  return {
     mode: env.production ? 'production' : 'development',
     resolve: {
-      extensions: [".js", ".ts", ".jsx", ".tsx", "*"],
+      extensions: [".js", "*"],
     },
     module: {
       rules: [
@@ -115,8 +102,4 @@ const configureWebpack = (env: Env) => {
       historyApiFallback: true
     }
   }
-  
-  return configuration
 }
-
-export default configureWebpack

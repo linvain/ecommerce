@@ -6,7 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import { rootReducer } from './reducer'
 import { preloadedState } from './preloadedState'
 import { rootEpic } from './rootEpic'
-import { history } from './history'
+import { history } from '../routing/history'
 
 const configureStore = () => {
   const epicMiddleware = createEpicMiddleware()
