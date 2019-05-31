@@ -7,8 +7,10 @@
   "scripts": {
     "start": "webpack-dev-server --env.development",
     "build": "webpack --env.production",
-    "eslint": "eslint \"**/*.js\" --format codeframe",
-    "sort": "import-sort \"src/**/*.js\" --write"
+    "eslint": "eslint \"**/*.js\" --format codeframe --ignore-path .gitignore",
+    "eslint!": "yarn eslint --fix",
+    "sort": "import-sort \"src/**/*.js\"",
+    "sort!": "yarn sort --write"
   },
   "dependencies": {
     "@babel/core": "^7.4.4",
