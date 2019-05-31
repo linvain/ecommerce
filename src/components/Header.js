@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaShoppingCart, FaUserCircle } from 'react-icons/fa';
+import { FaShoppingCart, FaUserCircle } from 'react-icons/fa'
 
 import styles from './Header.scss'
 import { Link } from './Link'

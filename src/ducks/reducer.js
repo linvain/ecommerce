@@ -1,4 +1,4 @@
-import {combineReducers} from 'redux'
+import { combineReducers } from 'redux'
 
 const locationReducer = (state = null, action) => {
   switch (action.type) {
