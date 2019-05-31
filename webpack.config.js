@@ -2,107 +2,107 @@ const path = require('path')
 
 module.exports = env => {
 
-  //////////////////////
-  // Loaders
-  //////////////////////
+	//////////////////////
+	// Loaders
+	//////////////////////
 
-  const babelLoader = () => ({
-    loader: 'babel-loader',
-  })
+	const babelLoader = () => ({
+		loader: 'babel-loader',
+	})
   
-  const styleLoader = () => ({
-    loader: 'style-loader'
-  })
+	const styleLoader = () => ({
+		loader: 'style-loader'
+	})
   
-  const cssLoader = () => ({
-    loader: 'css-loader',
-    options: {
-      modules: true,
-      localIdentName: '[name]__[local]',
-    }
-  })
+	const cssLoader = () => ({
+		loader: 'css-loader',
+		options: {
+			modules: true,
+			localIdentName: '[name]__[local]',
+		}
+	})
   
-  const sassLoader = () => {
-    const sass = require('sass')
-    return {
-      loader: 'sass-loader',
-      options: {
-        implementation: sass
-      }
-    }
-  }
+	const sassLoader = () => {
+		const sass = require('sass')
+		return {
+			loader: 'sass-loader',
+			options: {
+				implementation: sass
+			}
+		}
+	}
 
 
 
-  //////////////////////
-  // Rules
-  //////////////////////
+	//////////////////////
+	// Rules
+	//////////////////////
 
-  const babelRule = () => ({
-    test: /\.js$/,
-    exclude: /node_modules/,
-    use: babelLoader(),
-  })
+	const babelRule = () => ({
+		test: /\.js$/,
+		exclude: /node_modules/,
+		use: babelLoader(),
+	})
   
-  const globalStylesRule = () => ({
-    test: /\.scss$/,
-    include: [path.resolve(__dirname, './src/index.scss')],
-    use: [
-      styleLoader(),
-      cssLoader(),
-      sassLoader(),
-    ]
-  })
+	const globalStylesRule = () => ({
+		test: /\.scss$/,
+		include: [path.resolve(__dirname, './src/index.scss')],
+		use: [
+			styleLoader(),
+			cssLoader(),
+			sassLoader(),
+		]
+	})
 
-  const localStylesRule = () => ({
-    test: /\.scss$/,
-    exclude: [path.resolve(__dirname, './src/index.scss')],
-    use: [
-      styleLoader(),
-      cssLoader(),
-      sassLoader(),
-    ]
-  })
+	const localStylesRule = () => ({
+		test: /\.scss$/,
+		exclude: [path.resolve(__dirname, './src/index.scss')],
+		use: [
+			styleLoader(),
+			cssLoader(),
+			sassLoader(),
+		]
+	})
 
 
 
-  //////////////////////
-  // Plugins
-  //////////////////////
+	//////////////////////
+	// Plugins
+	//////////////////////
 
-  const htmlWebpackPlugin = () => {
-    const HtmlWebpackPlugin = require('html-webpack-plugin')
-    return new HtmlWebpackPlugin({
-      template: 'src/index.html',
-    })
-  }
+	const htmlWebpackPlugin = () => {
+		const HtmlWebpackPlugin = require('html-webpack-plugin')
+		return new HtmlWebpackPlugin({
+			template: 'src/index.html',
+		})
+	}
 
 
   
-  //////////////////////
-  // Configuration
-  //////////////////////
+	//////////////////////
+	// Configuration
+	//////////////////////
 
-  return {
-    mode: env.production ? 'production' : 'development',
-    resolve: {
-      extensions: ['.js', '*'],
-    },
-    output: {
-      publicPath: '/',
-    },
-    module: {
-      rules: [
-        babelRule(),
-        globalStylesRule(),
-        localStylesRule(),
-      ]
-    },
-    plugins: [
-      htmlWebpackPlugin(),
-    ],
-    devServer: {
-      historyApiFallback: true
-    }
-  }
+	return {
+		mode: env.production ? 'production' : 'development',
+		resolve: {
+			extensions: ['.js', '*'],
+		},
+		output: {
+			publicPath: '/',
+		},
+		module: {
+			rules: [
+				babelRule(),
+				globalStylesRule(),
+				localStylesRule(),
+			]
+		},
+		plugins: [
+			htmlWebpackPlugin(),
+		],
+		devServer: {
+			historyApiFallback: true
+		}
+	}
 }

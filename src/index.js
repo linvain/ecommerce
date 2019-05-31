@@ -9,10 +9,10 @@ import { App } from './components/App'
 import './index.scss'
 
 ReactDOM.render(
-  <Provider store={store}>
-    <IconContext.Provider value={{ className: 'react-icons' }}>
-      <App/>
-    </IconContext.Provider>
-  </Provider>,
-  window.document.getElementById('react-root')
+	<Provider store={store}>
+		<IconContext.Provider value={{ className: 'react-icons' }}>
+			<App/>
+		</IconContext.Provider>
+	</Provider>,
+	window.document.getElementById('react-root')
 )

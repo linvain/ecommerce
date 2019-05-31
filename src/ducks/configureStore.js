@@ -9,24 +9,24 @@ import { rootEpic } from './rootEpic'
 import { history } from '../routing/history'
 
 const configureStore = () => {
-  const epicMiddleware = createEpicMiddleware()
+	const epicMiddleware = createEpicMiddleware()
 
-  const middlewares = [epicMiddleware]
-  const middlewareEnhancer = applyMiddleware(...middlewares)
+	const middlewares = [epicMiddleware]
+	const middlewareEnhancer = applyMiddleware(...middlewares)
 
-  const enhancers = [middlewareEnhancer]
-  const composedEnhancers = composeWithDevTools({})(...enhancers)
+	const enhancers = [middlewareEnhancer]
+	const composedEnhancers = composeWithDevTools({})(...enhancers)
 
-  const store = createStore(rootReducer, preloadedState, composedEnhancers)
+	const store = createStore(rootReducer, preloadedState, composedEnhancers)
 
-  epicMiddleware.run(rootEpic)
+	epicMiddleware.run(rootEpic)
 
-  return store
+	return store
 }
 
 export const store = configureStore()
 
 history.listen(location => store.dispatch({
-  type: 'CHANGE_LOCATION',
-  payload: location.pathname,
+	type: 'CHANGE_LOCATION',
+	payload: location.pathname,
 }))
