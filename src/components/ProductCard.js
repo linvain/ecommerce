@@ -8,6 +8,9 @@ export const ProductCard = ({ product }) => (
     <div className={styles.imageContainer}>
       <img className={styles.image} src={product.img}/>
     </div>
-    <div className={styles.name}>{product.name}</div>
+    <div className={styles.name}>
+      <div>{product.name}</div>
+      <div>{product.priceString}</div>
+    </div>
   </Link>
 )
