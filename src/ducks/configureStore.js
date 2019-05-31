@@ -1,12 +1,12 @@
 import { createStore } from 'redux'
-import { createEpicMiddleware } from 'redux-observable'
 import { applyMiddleware } from 'redux'
 import { composeWithDevTools } from 'redux-devtools-extension'
+import { createEpicMiddleware } from 'redux-observable'
 
-import { rootReducer } from './reducer'
-import { preloadedState } from './preloadedState'
-import { rootEpic } from './rootEpic'
 import { history } from '../routing/history'
+import { preloadedState } from './preloadedState'
+import { rootReducer } from './reducer'
+import { rootEpic } from './rootEpic'
 
 const configureStore = () => {
 	const epicMiddleware = createEpicMiddleware()

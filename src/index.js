@@ -1,12 +1,12 @@
-import ReactDOM from 'react-dom'
-import React from 'react'
-import { Provider } from 'react-redux'
-import { IconContext } from 'react-icons'
-
-import { store } from './ducks/configureStore'
-import { App } from './components/App'
-
 import './index.scss'
+
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { IconContext } from 'react-icons'
+import { Provider } from 'react-redux'
+
+import { App } from './components/App'
+import { store } from './ducks/configureStore'
 
 ReactDOM.render(
 	<Provider store={store}>

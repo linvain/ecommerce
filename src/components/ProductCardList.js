@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import styles from './ProductCardList.scss'
 import { ProductCard } from './ProductCard'
+import styles from './ProductCardList.scss'
 
 export const ProductCardList = () => {
 	const allIds = useSelector(state => state.products.allIds)

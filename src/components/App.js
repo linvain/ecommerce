@@ -1,10 +1,11 @@
-import { useSelector } from 'react-redux'
 import React, { Fragment } from 'react'
+import { useSelector } from 'react-redux'
+
 import { Header } from './Header'
 import { MainColumn } from './MainColumn'
-import { ProductPage } from './pages/ProductPage'
 import { HomePage } from './pages/HomePage'
 import { NotFoundPage } from './pages/NotFoundPage'
+import { ProductPage } from './pages/ProductPage'
 
 const parseLocation = location => {
 	const arr = location.split('/')
