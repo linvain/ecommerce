@@ -5,15 +5,10 @@ import styles from './ProductCardList.scss'
 import { ProductCard } from './ProductCard'
 
 export const ProductCardList = () => {
-  const idList = useSelector(store => store.products.allIds, undefined)
+  const allIds = useSelector(state => state.products.allIds)
   return (
     <div className={styles.list}>
-      {idList.map(id => (
-        <ProductCard
-          key={id}
-          id={id}
-        />
-      ))}
+      {allIds.map(id => <ProductCard key={id} id={id} />)}
     </div>
   )
 }

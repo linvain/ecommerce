@@ -17,7 +17,7 @@ const parseLocation = location => {
 }
 
 export const App = () => {
-  const location = useSelector(store => store.location, undefined)
+  const location = useSelector(state => state.location)
   const [section, value] = parseLocation(location)
   return (
     <Fragment>
