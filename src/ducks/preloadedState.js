@@ -5,7 +5,7 @@ const getFakeProducts = () => {
 	const byId = allIds.reduce((products, id) => {
 		const price = 50 + 100 * Math.random()
 		products[id] = {
-			id: String(id),
+			id,
 			name: `Product ${id}`,
 			img: `https://loremflickr.com/500/500?random=${id}`,
 			price,

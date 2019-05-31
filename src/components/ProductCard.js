@@ -1,11 +1,11 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 
+import { useProduct } from '../products/useProduct'
 import { Link } from './Link'
 import styles from './ProductCard.scss'
 
 export const ProductCard = ({ id }) => {
-	const { img, name, priceString } = useSelector(state => state.products.byId[id])
+	const { img, name, priceString } = useProduct(id)
 	return (
 		<Link className={styles.card} to={'/products/' + id}>
 			<div className={styles.imageContainer}>

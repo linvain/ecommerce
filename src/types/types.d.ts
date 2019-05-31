@@ -2,6 +2,8 @@ interface Product {
   id: string
   name: string
   img: string
+  price: number
+  priceString: string
 }
 
 // https://github.com/redux-utilities/flux-standard-action
