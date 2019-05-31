@@ -5,7 +5,7 @@ const fakeProducts = [...Array(40).keys()].map((n) => {
   return {
     id: String(m),
     name: `Product ${m}`,
-    img: `https://dummyimage.com/250x250/fff/000&text=${m}`,
+    img: `https://loremflickr.com/500/500?random=${m}`,
   }
 })
 
