@@ -1,18 +1,26 @@
 import { history } from '../routing/history'
 
-const fakeProducts = [...Array(40).keys()].map((n) => {
-  const m = n + 1
-  const price = 50 + 100 * Math.random()
+const getFakeProducts = () => {
+  const allIds = [...Array(40).keys()].map(n => n + 1)
+  const byId = allIds.reduce((products, id) => {
+    const price = 50 + 100 * Math.random()
+    products[id] = {
+      id: String(id),
+      name: `Product ${id}`,
+      img: `https://loremflickr.com/500/500?random=${id}`,
+      price,
+      priceString: price.toFixed(0) + ' $'
+    }
+    return products
+  }, {})
+
   return {
-    id: String(m),
-    name: `Product ${m}`,
-    img: `https://loremflickr.com/500/500?random=${m}`,
-    price,
-    priceString: price.toFixed(0) + ' $'
+    allIds,
+    byId,
   }
-})
+}
 
 export const preloadedState = {
-  products: fakeProducts,
+  products: getFakeProducts(),
   location: history.location.pathname,
 }

@@ -88,6 +88,9 @@ module.exports = env => {
     resolve: {
       extensions: [".js", "*"],
     },
+    output: {
+      publicPath: "/",
+    },
     module: {
       rules: [
         babelRule(),
