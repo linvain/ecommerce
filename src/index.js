@@ -11,12 +11,10 @@ import './index.scss'
 const App = () => {
   const location = useSelector(store => store.location, undefined)
   return (
-    location === '/' && (
-      <Fragment>
-        <Header/>
-        <ProductCardList/>
-      </Fragment>
-    )
+    <Fragment>
+      <Header/>
+      {location === '/' && <ProductCardList/>}
+    </Fragment>
   )
 }
 

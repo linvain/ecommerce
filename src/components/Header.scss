@@ -1,22 +1,14 @@
 .header {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   font-size: 40px;
   font-weight: bold;
   max-width: 1090px;
   margin: auto;
 }
 
-.header > * {
-  flex: 1 0 0;
-}
-
-.name {
-  display: flex;
-  justify-content: center;
-}
-
-.cart {
-  display: flex;
-  justify-content: flex-end;
+.icon {
+  & + & {
+    margin-left: 20px;
+  }
 }
