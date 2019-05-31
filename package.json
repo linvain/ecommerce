@@ -10,12 +10,6 @@
     "eslint": "eslint \"**/*.js\" --format codeframe",
     "sort": "import-sort \"src/**/*.js\" --write"
   },
-  "importSort": {
-    ".js, .jsx, .es6, .es, .mjs, .ts, .tsx": {
-      "parser": "babylon",
-      "style": "module"
-    }
-  },
   "dependencies": {
     "@babel/core": "^7.4.4",
     "@babel/preset-env": "^7.4.4",
