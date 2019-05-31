@@ -2,7 +2,7 @@ import React from 'react'
 
 import styles from './ProductCard.scss'
 import { Link } from './Link'
-import { useSelector } from "react-redux"
+import { useSelector } from 'react-redux'
 
 export const ProductCard = ({ id }) => {
   const { img, name, priceString } = useSelector(state => state.products.byId[id])

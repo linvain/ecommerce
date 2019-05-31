@@ -12,6 +12,7 @@
   },
   "rules": {
     "semi": ["warn", "never"],
+    "quotes": ["warn", "single"],
     "object-curly-spacing": ["warn", "always"],
     "react/prop-types": [0]
   }

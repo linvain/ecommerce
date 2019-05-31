@@ -4,7 +4,7 @@ import { Provider } from 'react-redux'
 import { IconContext } from 'react-icons'
 
 import { store } from './ducks/configureStore'
-import { App } from "./components/App"
+import { App } from './components/App'
 
 import './index.scss'
 

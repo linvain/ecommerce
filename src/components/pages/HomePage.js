@@ -1,5 +1,5 @@
-import React from "react"
+import React from 'react'
 
-import { ProductCardList } from "../ProductCardList"
+import { ProductCardList } from '../ProductCardList'
 
 export const HomePage = () => <ProductCardList/>

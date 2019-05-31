@@ -11,11 +11,11 @@ module.exports = env => {
   })
   
   const styleLoader = () => ({
-    loader: "style-loader"
+    loader: 'style-loader'
   })
   
   const cssLoader = () => ({
-    loader: "css-loader",
+    loader: 'css-loader',
     options: {
       modules: true,
       localIdentName: '[name]__[local]',
@@ -23,9 +23,9 @@ module.exports = env => {
   })
   
   const sassLoader = () => {
-    const sass = require("sass")
+    const sass = require('sass')
     return {
-      loader: "sass-loader",
+      loader: 'sass-loader',
       options: {
         implementation: sass
       }
@@ -46,7 +46,7 @@ module.exports = env => {
   
   const globalStylesRule = () => ({
     test: /\.scss$/,
-    include: [path.resolve(__dirname, "./src/index.scss")],
+    include: [path.resolve(__dirname, './src/index.scss')],
     use: [
       styleLoader(),
       cssLoader(),
@@ -56,7 +56,7 @@ module.exports = env => {
 
   const localStylesRule = () => ({
     test: /\.scss$/,
-    exclude: [path.resolve(__dirname, "./src/index.scss")],
+    exclude: [path.resolve(__dirname, './src/index.scss')],
     use: [
       styleLoader(),
       cssLoader(),
@@ -86,10 +86,10 @@ module.exports = env => {
   return {
     mode: env.production ? 'production' : 'development',
     resolve: {
-      extensions: [".js", "*"],
+      extensions: ['.js', '*'],
     },
     output: {
-      publicPath: "/",
+      publicPath: '/',
     },
     module: {
       rules: [
