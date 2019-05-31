@@ -12,7 +12,7 @@ export const Header = () => (
       </Link>
     </div>
 
-    <div>
+    <div className={styles.right}>
       <Link className={styles.icon} to={'/cart'}>
         <FaUserCircle/>
       </Link>

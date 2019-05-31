@@ -1,6 +1,7 @@
 import ReactDOM from 'react-dom'
 import React, {Fragment} from 'react'
 import { Provider, useSelector } from 'react-redux'
+import { IconContext } from 'react-icons'
 
 import { ProductCardList } from './components/ProductCardList'
 import { Header } from './components/Header'
@@ -20,7 +21,9 @@ const App = () => {
 
 ReactDOM.render(
   <Provider store={store}>
-    <App/>
+    <IconContext.Provider value={{ className: 'react-icons' }}>
+      <App/>
+    </IconContext.Provider>
   </Provider>,
   window.document.getElementById('react-root')
 )
