@@ -1,4 +1,4 @@
-import {CHANGE_LOCATION} from './locationActions'
+import { CHANGE_LOCATION } from './locationActions'
 
 export const locationReducer = (state = null, { type, payload }) => {
 	switch (type) {
