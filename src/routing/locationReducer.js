@@ -1,10 +1,8 @@
-export const locationReducer = (state = null, action) => {
-	switch (action.type) {
-	case 'CHANGE_LOCATION':
-		return action.payload
-	case 'KEK':
-		return state
-	default:
-		return state
+import {CHANGE_LOCATION} from './locationActions'
+
+export const locationReducer = (state = null, { type, payload }) => {
+	switch (type) {
+		case CHANGE_LOCATION: return payload.location
+		default:              return state
 	}
 }

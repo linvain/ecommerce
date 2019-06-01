@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useAddToCart } from '../hooks/useAddToCart'
+import { useAddToCart } from '../../cart/hooks/useAddToCart'
 import { useProduct } from '../hooks/useProduct'
 import styles from './ProductPage.scss'
 

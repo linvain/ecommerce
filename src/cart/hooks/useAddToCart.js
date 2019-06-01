@@ -1,10 +1,8 @@
 import { useDispatch } from 'react-redux'
 
+import { addToCart } from '../cartActions'
+
 export const useAddToCart = () => {
 	const dispatch = useDispatch()
-	const addToCart = id => dispatch({
-		type: 'ADD_TO_CART',
-		payload: id,
-	})
-	return addToCart
+	return id => dispatch(addToCart(id))
 }

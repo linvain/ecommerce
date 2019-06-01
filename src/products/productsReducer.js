@@ -1,10 +1,5 @@
-export const productsReducer = (state = [], action) => {
-	switch (action.type) {
-	case 'KEK':
-		return state
-	case 'LOL':
-		return state
-	default:
-		return state
+export const productsReducer = (state = [], { type }) => {
+	switch (type) {
+		default: return state
 	}
 }

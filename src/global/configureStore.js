@@ -6,6 +6,7 @@ import { history } from '../routing/history'
 import { preloadedState } from './preloadedState'
 import { rootEpic } from './rootEpic'
 import { rootReducer } from './rootReducer'
+import {changeLocation} from '../routing/locationActions'
 
 const configureStore = () => {
 	const epicMiddleware = createEpicMiddleware()
@@ -25,7 +26,4 @@ const configureStore = () => {
 
 export const store = configureStore()
 
-history.listen(location => store.dispatch({
-	type: 'CHANGE_LOCATION',
-	payload: location.pathname,
-}))
+history.listen(location => store.dispatch(changeLocation(location.pathname)))
