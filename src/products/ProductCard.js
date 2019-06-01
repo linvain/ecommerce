@@ -1,7 +1,7 @@
 import React from 'react'
 
-import { useProduct } from '../products/useProduct'
-import { Link } from './Link'
+import { useProduct } from './useProduct'
+import { Link } from '../routing/Link'
 import styles from './ProductCard.scss'
 
 export const ProductCard = ({ id }) => {

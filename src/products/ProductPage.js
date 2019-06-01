@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { useProduct } from '../products/useProduct'
+import { useProduct } from './useProduct'
 
 export const ProductPage = ({ id }) => {
 	const { img, name, priceString } = useProduct(id)

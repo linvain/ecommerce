@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { ProductCard } from './ProductCard'
-import { ProductCardList } from './ProductCardList'
+import { ProductCard } from '../products/ProductCard'
+import { ProductCardList } from '../products/ProductCardList'
 
 const parseLocation = location => {
 	const arr = location.split('/')
