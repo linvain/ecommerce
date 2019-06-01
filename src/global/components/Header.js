@@ -1,7 +1,7 @@
 import React from 'react'
 import { FaShoppingCart, FaUserCircle } from 'react-icons/fa'
 
-import { Link } from '../routing/Link'
+import { Link } from '../../routing/components/Link'
 import styles from './Header.scss'
 
 export const Header = () => (
