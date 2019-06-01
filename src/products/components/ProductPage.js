@@ -1,8 +1,8 @@
 import React from 'react'
 
-import styles from './ProductPage.scss'
 import { useAddToCart } from '../hooks/useAddToCart'
 import { useProduct } from '../hooks/useProduct'
+import styles from './ProductPage.scss'
 
 export const ProductPage = ({ id }) => {
 	const { img, name, priceString } = useProduct(id)

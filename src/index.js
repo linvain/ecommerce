@@ -5,9 +5,9 @@ import ReactDOM from 'react-dom'
 import { IconContext } from 'react-icons'
 import { Provider } from 'react-redux'
 
-import { store } from './global/configureStore'
 import { Header } from './global/components/Header'
 import { MainColumn } from './global/components/MainColumn'
+import { store } from './global/configureStore'
 import { Router } from './routing/components/Router'
 
 ReactDOM.render(
