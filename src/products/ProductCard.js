@@ -1,8 +1,8 @@
 import React from 'react'
 
-import { useProduct } from './useProduct'
 import { Link } from '../routing/Link'
 import styles from './ProductCard.scss'
+import { useProduct } from './useProduct'
 
 export const ProductCard = ({ id }) => {
 	const { img, name, priceString } = useProduct(id)

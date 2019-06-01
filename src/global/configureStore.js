@@ -4,8 +4,8 @@ import { createEpicMiddleware } from 'redux-observable'
 
 import { history } from '../routing/history'
 import { preloadedState } from './preloadedState'
-import { rootReducer } from './reducer'
 import { rootEpic } from './rootEpic'
+import { rootReducer } from './rootReducer'
 
 const configureStore = () => {
 	const epicMiddleware = createEpicMiddleware()

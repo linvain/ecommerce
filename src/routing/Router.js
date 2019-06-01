@@ -1,8 +1,8 @@
 import React from 'react'
 import { useSelector } from 'react-redux'
 
-import { ProductCard } from '../products/ProductCard'
 import { ProductCardList } from '../products/ProductCardList'
+import { ProductPage } from '../products/ProductPage'
 
 const parseLocation = location => {
 	const arr = location.split('/')
@@ -19,6 +19,6 @@ export const Router = () => {
 	const [section, value] = parseLocation(location)
 	return {
 		home:       <ProductCardList/>,
-		products:   <ProductCard id={value}/>,
+		products:   <ProductPage id={value}/>,
 	}[section] || <div>404 Not Found</div>
 }

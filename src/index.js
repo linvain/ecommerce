@@ -5,10 +5,10 @@ import ReactDOM from 'react-dom'
 import { IconContext } from 'react-icons'
 import { Provider } from 'react-redux'
 
+import { store } from './global/configureStore'
 import { Header } from './global/Header'
 import { MainColumn } from './global/MainColumn'
 import { Router } from './routing/Router'
-import { store } from './ducks/configureStore'
 
 ReactDOM.render(
 	<Provider store={store}>

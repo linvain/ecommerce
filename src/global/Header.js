@@ -1,8 +1,8 @@
 import React from 'react'
 import { FaShoppingCart, FaUserCircle } from 'react-icons/fa'
 
-import styles from './Header.scss'
 import { Link } from '../routing/Link'
+import styles from './Header.scss'
 
 export const Header = () => (
 	<div className={styles.header}>
