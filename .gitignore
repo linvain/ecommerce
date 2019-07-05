@@ -1,2 +1,6 @@
-/node_modules/
+# in the root
 /.idea/
+
+# anywhere
+node_modules/
+dist/
