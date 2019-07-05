@@ -8,6 +8,7 @@ module.exports = env => {
 
 	const babelLoader = () => ({
 		loader: 'babel-loader',
+		options: require('./babel.config.js'),
 	})
   
 	const styleLoader = () => ({
