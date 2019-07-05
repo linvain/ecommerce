@@ -14,7 +14,8 @@
     "eslint?": "eslint \"**/*.js\" --format codeframe --ignore-path .gitignore",
     "eslint": "yarn eslint? --fix",
     "sort?": "import-sort \"**/*.js\"",
-    "sort": "yarn sort? --write"
+    "sort": "yarn sort? --write",
+    "update": "npx npm-check-updates -u && yarn && yarn upgrade"
   },
   "devDependencies": {
     "eslint": "^6.0.1",
