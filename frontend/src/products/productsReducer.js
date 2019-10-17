@@ -1,4 +1,4 @@
-export const productsReducer = (state = [], { type }) => {
+export const productsReducer = (state = [], {type}) => {
 	switch (type) {
 		default: return state
 	}

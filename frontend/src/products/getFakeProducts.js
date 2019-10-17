@@ -7,7 +7,7 @@ export const getFakeProducts = () => {
 			name: `Product ${id}`,
 			img: `https://loremflickr.com/500/500?random=${id}`,
 			price,
-			priceString: price.toFixed(0) + ' $'
+			priceString: price.toFixed(0) + ' $',
 		}
 		return products
 	}, {})

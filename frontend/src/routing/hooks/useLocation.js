@@ -1,4 +1,4 @@
-import { useSelector } from 'react-redux'
+import {useSelector} from 'react-redux'
 
 const parseLocation = location => {
 	const arr = location.split('/')

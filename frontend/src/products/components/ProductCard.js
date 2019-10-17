@@ -1,11 +1,11 @@
 import React from 'react'
 
-import { Link } from '../../routing/components/Link'
-import { useProduct } from '../hooks/useProduct'
+import {Link} from '../../routing/components/Link'
+import {useProduct} from '../hooks/useProduct'
 import styles from './ProductCard.scss'
 
-export const ProductCard = ({ id }) => {
-	const { img, name, priceString } = useProduct(id)
+export const ProductCard = ({id}) => {
+	const {img, name, priceString} = useProduct(id)
 	return (
 		<Link className={styles.card} to={'/products/' + id}>
 			<div className={styles.imageContainer}>

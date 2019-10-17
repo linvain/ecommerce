@@ -9,27 +9,27 @@ module.exports = env => {
 	const babelLoader = () => ({
 		loader: 'babel-loader',
 	})
-  
+
 	const styleLoader = () => ({
-		loader: 'style-loader'
+		loader: 'style-loader',
 	})
-  
+
 	const cssLoader = () => ({
 		loader: 'css-loader',
 		options: {
 			modules: {
 				localIdentName: '[name]__[local]',
 			},
-		}
+		},
 	})
-  
+
 	const sassLoader = () => {
 		const sass = require('sass')
 		return {
 			loader: 'sass-loader',
 			options: {
-				implementation: sass
-			}
+				implementation: sass,
+			},
 		}
 	}
 
@@ -44,7 +44,7 @@ module.exports = env => {
 		exclude: /node_modules/,
 		use: babelLoader(),
 	})
-  
+
 	const globalStylesRule = () => ({
 		test: /\.scss$/,
 		include: [path.resolve(__dirname, './src/index.scss')],
@@ -52,7 +52,7 @@ module.exports = env => {
 			styleLoader(),
 			cssLoader(),
 			sassLoader(),
-		]
+		],
 	})
 
 	const localStylesRule = () => ({
@@ -62,7 +62,7 @@ module.exports = env => {
 			styleLoader(),
 			cssLoader(),
 			sassLoader(),
-		]
+		],
 	})
 
 
@@ -79,7 +79,7 @@ module.exports = env => {
 	}
 
 
-  
+
 	//////////////////////
 	// Configuration
 	//////////////////////
@@ -97,13 +97,13 @@ module.exports = env => {
 				babelRule(),
 				globalStylesRule(),
 				localStylesRule(),
-			]
+			],
 		},
 		plugins: [
 			htmlWebpackPlugin(),
 		],
 		devServer: {
-			historyApiFallback: true
-		}
+			historyApiFallback: true,
+		},
 	}
 }
