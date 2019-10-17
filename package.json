@@ -11,7 +11,7 @@
     "start": "cd frontend && yarn start",
     "build": "cd frontend && yarn build",
     "lint": "yarn sort && yarn eslint",
-    "eslint?": "eslint \"**/*.js\" --format codeframe --ignore-path .gitignore",
+    "eslint?": "eslint \"**/*.js\" --format codeframe --ignore-pattern !.eslintrc.js --ignore-path .gitignore",
     "eslint": "yarn eslint? --fix",
     "sort?": "import-sort \"**/*.js\"",
     "sort": "yarn sort? --write",
